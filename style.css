@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Arimo:ital,wght@0,400..700;1,400..700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Margarine&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+PE:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%vh;
+    background-color: #73D1F0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10em;
+        position: relative;
+
+        #error-paragraph {
+            position: absolute;
+            top: -8px;
+            font-size: 1.5em;
+            font-family: Roboto, sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 1.2em;
+            flex-wrap: wrap;
+            background-color: #fff;
+            padding: 2.5em 4em;
+            border-radius: 0.5em;
+            font-size: 1.5rem;
+
+            input {
+                border: none;
+                outline: none;
+                font-size: 1.2em;
+            }
+
+            fieldset {
+                border: 5px solid rgb(215, 210, 210);
+                border-radius: 0.2em;
+                font-family: Margarine, sans-serif;
+                transition: border-color 0.2s ease;
+
+                &:focus-within,
+                &:hover {
+                    border-color: #B3EBF2;
+                }
+            }
+
+            .select-wrapper {
+                position: relative;
+                display: inline-block;
+
+                select {
+                    appearance: none;
+                    border: none;
+                    outline: none;
+                    font-size: 0.7em;
+                    font-family: "Winky Rough", sans-serif;
+                    padding: 0.4em 1.5em;
+                    cursor: pointer;
+
+                    option:hover {
+                        background-color: #B3EBF2;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: -3px;
+                    top: 50%;
+                    width: 30px;
+                    height: 30px;
+                    transform: translateY(-50%) rotate(0deg);
+                    transition: transform 0.25s ease;
+
+                    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6'/></svg>");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    pointer-events: none;
+                }
+
+                &.open::after {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+@media (width <=500px) {
+
+    .wrapper {
+        fieldset {
+            border: 1px solid rgb(215, 210, 210);
+            font-size: 0.8em;
+        }
+
+        input {
+            width: 100%;
+        }
+
+    }
+
+}

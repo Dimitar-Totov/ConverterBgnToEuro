@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <p id="error-paragraph"></p>
+        <div class="wrapper">
+            <fieldset>
+                <legend>From</legend>
+                <input type="text" id="from-amount" value="1"></input>
+                <div class="select-wrapper">
+                    <select name="from-currency" id="from-currency">
+                        <option value="eu">EU</option>
+                        <option selected value="bgn">BG</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>To</legend>
+                <input type="text" id="to-amount"></input>
+                <div class="select-wrapper">
+                    <select name="to-currency" id="to-currency">
+                        <option value="eu">EU</option>
+                        <option value="bgn">BG</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+</html>
